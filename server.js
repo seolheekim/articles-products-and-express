@@ -10,7 +10,10 @@ const PORT = process.env.PORT || 3000;
 // parse application/json
 app.use(bodyParser.json());
 
+
+// routers
 app.use('/articles', articleRouter);
+app.use('/products', productRouter);
 
 const server = app.listen(PORT, () => {
   console.log(`Listening on ${PORT}`);

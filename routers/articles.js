@@ -1,19 +1,36 @@
 /*jshint esversion: 6 */
 const express = require('express');
 const router = express.Router();
+const articlesDB = require('../db/articles.js');
 
 router.route('/')
   .post((req, res) => {
     req.setEncoding('utf8');
-    console.log(req.body);
+    articlesDB.add(req.body);
+    console.log(articlesDB.all());
+    res.json({ "success" : true }); //delete later
+
+    //SUCCESS
+
+    //FAIL
   });
 
-// router.route('/articles/:title')
-//   .put((req, res) => {
+router.route('/:title')
+  .put((req, res) => {
+    articlesDB.getByTitle(req.params.title);
 
-//   })
-//   .delete((req, res) => {
+    //SUCCESS
 
-//   });
+    //FAIL
+  })
+  .delete((req, res) => {
+    articlesDB.deleteArticle(req.params.title);
+
+    //SUCCESS
+
+    //FAIL
+  });
+
+
 
 module.exports = router;
