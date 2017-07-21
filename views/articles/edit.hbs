@@ -1,1 +1,16 @@
-place holder text
+<div class="container">
+  <h1>Edit</h1>
+  <form action="/articles/:title" method="post">
+    <label for="name">Title</label>
+    <input type="text" name="title" placeholder="{{title}}">
+
+    <label for="author">Author</label>
+    <input type="text" name="author" placeholder="{{author}}">
+
+    <label for="body">Body</label>
+    <input type="text" id="body-form" name="body" placeholder="{{body}}">
+
+    <input type="hidden" name="_method" value="PUT">
+    <input type="submit" value="send">
+  </form>
+</div>

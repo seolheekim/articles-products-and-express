@@ -1,1 +1,11 @@
-place holder text
+<h1>Articles</h1>
+<div class="articles">
+  {{#each collection}}
+    <div class="article">
+      <p>{{title}} | {{author}}</p>
+      <div class="article-body">
+        <p>{{body}}</p>
+      </div>
+    </div>
+  {{/each}}
+</div>

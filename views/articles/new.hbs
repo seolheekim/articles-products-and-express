@@ -1,1 +1,15 @@
-place holder text
+<div class="container">
+  <h1>Create a new article!</h1>
+  <form action="/articles" method="post">
+    <label for="name">Title</label>
+    <input type="text" name="title" placeholder="Please enter an article title">
+
+    <label for="author">Author</label>
+    <input type="text" name="author" placeholder="Please enter an author">
+
+    <label for="body">Body</label>
+    <input type="text" id="body-form" name="body" placeholder="Write the body of your article here">
+
+    <input type="submit" value="send">
+  </form>
+</div>
