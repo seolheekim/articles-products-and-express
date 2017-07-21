@@ -31,6 +31,10 @@ router.route('/:title')
     //FAIL
   });
 
+router.route('/:title/edit')
+  .get();
 
+router.route('/new')
+  .get();
 
 module.exports = router;

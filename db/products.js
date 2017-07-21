@@ -24,8 +24,17 @@ const productId = ( (getId) => {
   }
 });
 
+const deleteProduct = ( (getId) => {
+  for(let d = 0; d < products.length; d++){
+    if(products[i].id === getId){
+      return products.splice(d, 1);
+    }
+  }
+});
+
 module.exports = {
   allProducts,
   addProducts,
-  productId
+  productId,
+  deleteProduct
 };

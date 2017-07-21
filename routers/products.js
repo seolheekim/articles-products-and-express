@@ -21,5 +21,15 @@ router.route('/:id')
     res.json({'sucess' : true});
   });
 
+router.delete('/:id', (req, res) => {
+  let requestId = parseInt(req.params.id);
+  let removeId = productsDb.deleteProduct(requestId);
+});
+
+router.route('/new')
+  .get( (req, res) => {
+    console.log("req", req.body);
+    res.render('/products/new');
+  });
 
 module.exports = router;

@@ -10,6 +10,13 @@ const PORT = process.env.PORT || 3000;
 // parse application/json
 app.use(bodyParser.json());
 
+const hbs = exphbs.create({
+  extname: 'hbs',
+  defaultLayout: 'main'
+});
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'hbs');
 
 // routers
 app.use('/articles', articleRouter);
